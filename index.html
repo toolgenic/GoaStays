@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goa Rentals | Like Airbnb</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-red-500">GoaStays</h1>
+      <nav class="space-x-6">
+        <a href="#" class="text-gray-700 hover:text-red-500">Home</a>
+        <a href="#" class="text-gray-700 hover:text-red-500">Browse</a>
+        <a href="#" class="text-gray-700 hover:text-red-500">Host</a>
+        <a href="#" class="text-gray-700 hover:text-red-500">Login</a>
+      </nav>
+    </div>
+  </header>  <!-- Hero Section with Filters -->  <section class="bg-white py-12 text-center">
+    <h2 class="text-4xl font-semibold mb-4">Book Your Stay in Goa</h2>
+    <p class="text-lg text-gray-600">Beautiful beach houses, cozy cottages & affordable rooms</p>
+    <form class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <input type="text" placeholder="Search location..." class="border px-4 py-2 rounded">
+      <select class="border px-4 py-2 rounded">
+        <option value="">Guests</option>
+        <option value="1">1 Guest</option>
+        <option value="2">2 Guests</option>
+        <option value="3">3 Guests</option>
+        <option value="4+">4+ Guests</option>
+      </select>
+      <select class="border px-4 py-2 rounded">
+        <option value="">Max Price</option>
+        <option value="1000">₹1000</option>
+        <option value="2000">₹2000</option>
+        <option value="3000">₹3000</option>
+        <option value="5000">₹5000+</option>
+      </select>
+      <button class="bg-red-500 text-white px-6 py-2 rounded hover:bg-red-600">Search</button>
+    </form>
+  </section>  <!-- Listings -->  <section class="py-10 max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-semibold">Top Stays in Goa</h3>
+      <button onclick="openForm()" class="bg-green-500 text-white px-4 py-2 rounded">+ List Your Property</button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/400x300/?goa,beach,house" class="w-full h-60 object-cover rounded-t-xl" alt="Rental">
+        <div class="p-4">
+          <h4 class="text-xl font-semibold">Beachside Villa</h4>
+          <p class="text-gray-600 text-sm mt-1">Candolim • 4 guests • 2 beds</p>
+          <p class="text-red-500 mt-2 font-bold">₹3,200/night</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/400x300/?goa,homestay" class="w-full h-60 object-cover rounded-t-xl" alt="Rental">
+        <div class="p-4">
+          <h4 class="text-xl font-semibold">Goan Homestay</h4>
+          <p class="text-gray-600 text-sm mt-1">Anjuna • 3 guests • 1 bed</p>
+          <p class="text-red-500 mt-2 font-bold">₹2,000/night</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://source.unsplash.com/400x300/?goa,cottage" class="w-full h-60 object-cover rounded-t-xl" alt="Rental">
+        <div class="p-4">
+          <h4 class="text-xl font-semibold">Cozy Cottage</h4>
+          <p class="text-gray-600 text-sm mt-1">Palolem • 2 guests • 1 bed</p>
+          <p class="text-red-500 mt-2 font-bold">₹1,800/night</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Property Listing Form (Modal) -->  <div id="formModal" class="fixed inset-0 bg-black bg-opacity-40 hidden flex items-center justify-center">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md relative">
+      <button onclick="closeForm()" class="absolute top-2 right-2 text-red-500 font-bold text-xl">×</button>
+      <h3 class="text-xl font-semibold mb-4">List Your Property</h3>
+      <form id="propertyForm">
+        <input type="text" placeholder="Property Title" class="w-full border mb-3 px-3 py-2 rounded" required>
+        <input type="text" placeholder="Location (e.g. Anjuna)" class="w-full border mb-3 px-3 py-2 rounded" required>
+        <input type="number" placeholder="Price per night" class="w-full border mb-3 px-3 py-2 rounded" required>
+        <input type="number" placeholder="Max Guests" class="w-full border mb-3 px-3 py-2 rounded" required>
+        <input type="url" placeholder="Image URL" class="w-full border mb-3 px-3 py-2 rounded" required>
+        <button type="submit" class="w-full bg-green-500 text-white py-2 rounded">Submit</button>
+      </form>
+    </div>
+  </div>  <!-- Footer -->  <footer class="bg-gray-100 py-6 mt-10">
+    <div class="max-w-7xl mx-auto text-center text-sm text-gray-600">
+      © 2025 GoaStays. All rights reserved.
+    </div>
+  </footer>  <script>
+    function openForm() {
+      document.getElementById('formModal').classList.remove('hidden');
+    }
+    function closeForm() {
+      document.getElementById('formModal').classList.add('hidden');
+    }
+    document.getElementById('propertyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Your property has been submitted! (This is a static demo)');
+      closeForm();
+    });
+  </script></body>
+</html>
